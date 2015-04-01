@@ -19,7 +19,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-
 public class VACameraActivity extends Activity implements OnClickListener {
 
 	private SurfaceView preview = null; // The surface view that will contain
@@ -38,7 +37,7 @@ public class VACameraActivity extends Activity implements OnClickListener {
 	PictureCallback png = new PictureCallback() {
 		@Override
 		public void onPictureTaken(byte[] data, Camera camera) {
-			
+
 			// TODO Auto-generated method stub
 			Log.d("onPicture", "MyCamera");
 			camera.stopPreview();
@@ -163,30 +162,29 @@ public class VACameraActivity extends Activity implements OnClickListener {
 
 				}
 
-				if (cW != 0) {
-					parameters.setPreviewSize(cW, cH);
+				parameters.setPreviewSize(cW, cH);
 
-					/*
-					 * Setting up camera format and future picture to be taken
-					 */
+				/*
+				 * Setting up camera format and future picture to be taken
+				 */
 
-					cW = 0;
-					cH = 0;
-					for (Camera.Size sz : parameters.getSupportedPictureSizes()) {
+				cW = 0;
+				cH = 0;
+				for (Camera.Size sz : parameters.getSupportedPictureSizes()) {
 
-						if (sz.width * sz.height > cW * cH) {
-							cW = sz.width;
-							cH = sz.height;
+					if (sz.width * sz.height > cW * cH) {
+						cW = sz.width;
+						cH = sz.height;
 
-						}
 					}
-					parameters.setPictureSize(cW, cH);
-					// parameters.setPictureFormat(ImageFormat.YUY2); // if
-					// needed to change the format of the image
-
-					camera.setParameters(parameters);
-					cameraConfigured = true;
 				}
+				parameters.setPictureSize(cW, cH);
+				// parameters.setPictureFormat(ImageFormat.YUY2); // if
+				// needed to change the format of the image
+
+				camera.setParameters(parameters);
+				cameraConfigured = true;
+
 			}
 		}
 
