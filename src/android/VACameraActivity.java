@@ -164,10 +164,6 @@ public class VACameraActivity extends Activity implements OnClickListener {
 
 				parameters.setPreviewSize(cW, cH);
 
-				/*
-				 * Setting up camera format and future picture to be taken
-				 */
-
 				cW = 0;
 				cH = 0;
 				for (Camera.Size sz : parameters.getSupportedPictureSizes()) {
@@ -179,8 +175,6 @@ public class VACameraActivity extends Activity implements OnClickListener {
 					}
 				}
 				parameters.setPictureSize(cW, cH);
-				// parameters.setPictureFormat(ImageFormat.YUY2); // if
-				// needed to change the format of the image
 
 				camera.setParameters(parameters);
 				cameraConfigured = true;

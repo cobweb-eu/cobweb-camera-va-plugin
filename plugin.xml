@@ -8,6 +8,10 @@
 	<repo>https://github.com/cobweb-eu/cobweb-camera-va-plugin</repo>
 	<issue>https://github.com/cobweb-eu/cobweb-camera-va-plugin/issues</issue>
 
+	<js-module src="www/COBWEBCameraVAPlugin.js" name="COBWEBCameraVAPlugin">
+        <clobbers target="eu.cobwebproject.cordova.cameravaplugin" />
+    </js-module>
+	
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
