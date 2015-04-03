@@ -9,7 +9,7 @@
 	<issue>https://github.com/cobweb-eu/cobweb-camera-va-plugin/issues</issue>
 
 	<js-module src="www/COBWEBCameraVAPlugin.js" name="COBWEBCameraVAPlugin">
-        <clobbers target="eu.cobwebproject.cordova.cameravaplugin" />
+        <clobbers target="cordova.plugins.cameravaplugin" />
     </js-module>
 
     <!-- android -->
