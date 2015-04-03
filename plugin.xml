@@ -43,6 +43,7 @@
 
         <source-file src="src/android/COBWEBCameraVAPlugin.java" target-dir="src/ie/ucd/cobweb/cordova" />
 		<source-file src="src/android/VACameraActivity.java" target-dir="src/ie/ucd/cobweb/cordova" />
+        <source-file src="src/android/Constant.java" target-dir="src/ie/ucd/cobweb" />
 		<source-file src="src/android/cobwebvacamera.xml" target-dir="res/layout" />
 
     </platform>
