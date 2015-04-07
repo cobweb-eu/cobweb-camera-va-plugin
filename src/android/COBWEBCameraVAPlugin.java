@@ -48,18 +48,17 @@ public class COBWEBCameraVAPlugin extends CordovaPlugin {
 
 		final CordovaPlugin cp = this;
 
-		cordova.getActivity().runOnUiThread(new Runnable() {
+		new Thread() {
 			@Override
 			public void run() {
 
-				Activity activity = cordova.getActivity();
-				Context context = activity.getApplicationContext();
+				
 
 				try {
 
 					File storageDir;
 					if (Environment.DIRECTORY_PICTURES == null) {
-						storageDir = new File(activity.getCacheDir()
+						storageDir = new File(cordova.getActivity().getCacheDir()
 								.getAbsolutePath() + "/" + SFOLDER + "/");
 					} else {
 
@@ -79,23 +78,35 @@ public class COBWEBCameraVAPlugin extends CordovaPlugin {
 								+ "/" + SFOLDER + "/");
 					}
 
-					File file = File.createTempFile("IMG_" + UUID.randomUUID(),
+					if (!storageDir.exists()) {
+						storageDir.mkdirs();
+					}
+					File file = File.createTempFile("IMG_0" ,
 							".jpeg", storageDir);
 
 					fileP = file.getAbsolutePath();
 
-					// Create camera intent
-					Intent intent = new Intent(context,
-							ie.ucd.cobweb.cordova.VACameraActivity.class);
-					intent.putExtra(FLOC, fileP);
-					cordova.startActivityForResult(cp, intent, 0);
+					
+					cordova.getActivity().runOnUiThread(new Runnable() {
+						public void run() {
+
+							Activity activity = cordova.getActivity();
+							Context context = activity.getApplicationContext();
+							
+							// Create camera intent
+							Intent in = new Intent(context,
+									ie.ucd.cobweb.cordova.VACameraActivity.class);
+							in.putExtra(FLOC, fileP);
+							cordova.startActivityForResult(cp, in, 0);
+						}
+					});
 
 				} catch (IOException e) {
 					e.printStackTrace();
 
 				}
 			}
-		});
+		}.start();
 
 		return true;
 
