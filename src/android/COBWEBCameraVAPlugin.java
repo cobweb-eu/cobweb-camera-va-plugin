@@ -81,7 +81,7 @@ public class COBWEBCameraVAPlugin extends CordovaPlugin {
 					if (!storageDir.exists()) {
 						storageDir.mkdirs();
 					}
-					File file = File.createTempFile("IMG_0" ,
+					File file = File.createTempFile("IMG_"+UUID.randomUUID() ,
 							".jpeg", storageDir);
 
 					fileP = file.getAbsolutePath();
