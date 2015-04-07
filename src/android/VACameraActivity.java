@@ -1,6 +1,6 @@
 package ie.ucd.cobweb.cordova;
 
-import ie.ucd.cobweb.Constant;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -110,7 +110,7 @@ public class VACameraActivity extends Activity implements OnClickListener {
 		takeButton.setOnClickListener(this);
 
 		Bundle passingInLocation = getIntent().getExtras();
-		locationForPhoto = passingInLocation.getString(Constant.FLOC);
+		locationForPhoto = passingInLocation.getString(COBWEBCameraVAPlugin.FLOC);
 
 	}
 

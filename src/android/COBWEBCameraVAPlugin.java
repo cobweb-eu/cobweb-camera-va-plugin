@@ -32,7 +32,7 @@ public class COBWEBCameraVAPlugin extends CordovaPlugin {
 	public static final String VER = "Vertical";
 	private static final String SFOLDER = "COBWEB";
 	private static final String EMSG = "Error taking photo";
-	private final static String FLOC = "FileLocation";
+	public final static String FLOC = "FileLocation";
 
 	private CallbackContext cbContext;
 	private String fileP;
