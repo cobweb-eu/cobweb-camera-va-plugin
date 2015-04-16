@@ -1,0 +1,30 @@
+{
+  "name": "cobweb-camera-va-plugin",
+  "version": "0.0.1",
+  "description": "Cordova Camera VA Plugin",
+  "cordova": {
+    "id": "cordova-camera-va",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cobweb-eu/cobweb-camera-va-plugin.git"
+  },
+  "keywords": [
+    "cordova",
+    "camera",
+    "va",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.1.0"
+    }
+  ],
+  "author": "Conor Muldoon",
+  "license": "Apache 2.0"
+}
