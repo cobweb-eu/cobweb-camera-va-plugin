@@ -52,8 +52,6 @@ public class COBWEBCameraVAPlugin extends CordovaPlugin {
 			@Override
 			public void run() {
 
-				
-
 				try {
 
 					File storageDir;

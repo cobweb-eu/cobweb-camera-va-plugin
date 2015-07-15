@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="ie.ucd.cobweb.cordova.cameravaplugin" version="0.0.1"
+	xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+	<name>COBWEB Camera View Angle Plug-in</name>
+	<description>
+		COBWEB plug-in for capturing view angles along with an image
+	</description>
+
+	<access origin="*" />
+</widget>
